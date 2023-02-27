@@ -1,0 +1,788 @@
+/* ------------------------------------------------------------------------------
+	Template Name: Orly
+	Author: Designstub
+	Author URI: http://www.designstub.com
+	License: GNU General Public License version 3.0
+	License URI: http://www.gnu.org/licenses/gpl-3.0.html
+	Version: 1.0
+
+/* ------------------------------------------------------------------------------
+	Typography
+-------------------------------------------------------------------------------*/
+
+@import url(http://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700);
+
+p {
+	font-size: 14px;
+	line-height: 22.4px;
+	color: #6c7279;
+}
+h1 {
+	font-size: 65px;
+	color: #2d3033;
+}
+h2 {
+	font-size: 40px;
+	color: #2d3033;
+}
+h3 {
+	font-size: 28px;
+	color: #2d3033;
+	font-weight: 300;
+}
+h4 {
+	font-size: 22px;
+	color: #2d3033;
+	font-weight: 400;
+}
+h5 {
+	font-size: 14px;
+	color: #2d3033;
+	text-transform: uppercase;
+	font-weight: 700;
+}
+
+/* Button */
+
+.c-checkbox {
+	display: none;
+  }
+  .c-checkbox:checked + .c-formContainer .c-form {
+	width: 34em;
+  }
+  .c-checkbox:checked + .c-formContainer .c-form__toggle {
+	visibility: hidden;
+	opacity: 0;
+	transform: scale(0.7);
+  }
+  .c-checkbox:checked + .c-formContainer .c-form__input,
+  .c-checkbox:checked + .c-formContainer .c-form__buttonLabel {
+	transition: 0.2s 0.1s;
+	visibility: visible;
+	opacity: 1;
+	transform: scale(1);
+  }
+  
+
+
+  
+  .c-formContainer,
+  .c-form,
+  .c-form__toggle {
+	width: 17em;
+	height: 4.25em;
+  }
+  
+  .c-formContainer {
+	position: relative;
+	font-weight: 700;
+	margin-top: 25px;
+  }
+  
+  .c-form,
+  .c-form__toggle {
+	position: absolute;
+	border-radius: 6.25em;
+	background-color: #ffffff;
+	transition: 0.6s;
+  }
+  
+  .c-form {
+	left: 0%;
+	transform: translateX(0%);
+	padding: 0.625em;
+	box-sizing: border-box;
+	box-shadow: 0 0.125em 0.3125em rgba(0, 0, 0, 0.3);
+	display: flex;
+	justify-content: center;
+  }
+  
+  .c-form__toggle {
+	color: #000000;
+	top: 0;
+	cursor: pointer;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: "Dosis", sans-serif;
+	
+  }
+  
+  .c-form__input,
+  .c-form__button {
+	font: inherit;
+	border: 0;
+	outline: 0;
+	border-radius: 5em;
+	box-sizing: border-box;
+  }
+  
+  .c-form__input,
+  .c-form__buttonLabel {
+	font-size: 1.3em;
+	font-family: "Dosis", sans-serif;
+	opacity: 0;
+	visibility: hidden;
+	transform: scale(0.7);
+	transition: 0s;
+  }
+  
+  .c-form__input {
+	color: #cfcfcf;
+	height: 100%;
+	width: 100%;
+	padding: 0 0.714em;
+  }
+  .c-form__input::placeholder {
+	color: currentColor;
+  }
+  .c-form__input:required:valid {
+	color: #000000;
+  }
+ 
+  .c-form__input:required:valid + .c-form__buttonLabel::before {
+	pointer-events: initial;
+  }
+  
+  .c-form__buttonLabel {
+	color: white;
+	height: 100%;
+	width: auto;
+	transition: 0.6s;
+  }
+  .c-form__buttonLabel::before {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+	cursor: pointer;
+  }
+  
+  .c-form__button {
+	color: inherit;
+	padding: 0;
+	height: 100%;
+	width: 5em;
+	background-color: #ececec;
+	transition: 0.6s;
+  }
+  .c-form__input:required:valid +.c-form__button{
+	color: white;
+	background-color: black;
+	transition: 0.6s;
+  }
+  
+
+  @media screen and (max-width: 600px) {
+	.c-checkbox:checked + .c-formContainer .c-form {
+		width: 25em;
+	  }
+	  .c-form__button {
+		color: inherit;
+		padding: 0;
+		height: 100%;
+		width: 4em;
+		background-color: #ececec;
+		transition: 0.6s;
+	  }
+	  .c-formContainer,
+  	  .c-form,
+      .c-form__toggle {
+		width: 14em;
+		height: 3.25em;
+  	}
+	  .c-form__input,
+	  .c-form__buttonLabel {
+		font-size: 1em;
+		opacity: 0;
+		visibility: hidden;
+		transform: scale(0.7);
+		transition: 0s;
+		font-family: "Dosis", sans-serif;
+	}
+	.c-formContainer {
+		position: relative;
+		font-weight: 700;
+		margin-top: 18px;
+	  }
+	.c-form__toggle {
+		color: #000000;
+		font-size: 1em;
+		top: 0;
+		cursor: pointer;
+		z-index: 1;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-family: "Dosis", sans-serif;
+		
+	}
+	.mouse-icon {
+		border: 2px solid #fff;
+		border-radius: 16px;
+		height: 40px;
+		width: 24px;
+		display: block;
+		z-index: 10;
+		position:static;
+		left: 0;
+		right: 0;
+		bottom: 100px;
+		margin: auto;
+	}
+
+	
+	.cent{
+		margin-left: 100px;
+	}
+
+	.p1{
+		margin-top: 100px;
+	}
+	.p2{
+		margin-top: 0;
+	}
+  }
+ 
+
+/* ------------------------------------------------------------------------------
+	Global Styles
+-------------------------------------------------------------------------------*/
+a {
+	color: #e84545;
+}
+a:hover, a:focus {
+	text-decoration: none;
+	-moz-transition: background-color, color, 0.3s;
+	-o-transition: background-color, color, 0.3s;
+	-webkit-transition: background-color, color, 0.3s;
+	transition: background-color, color, 0.3s;
+}
+body {
+	font-family: "Roboto", sans-serif;
+	font-weight: 400;
+	color: #6c7279;
+
+	scrollbar-width: auto;          /* "auto" or "thin" */
+    scrollbar-color: rgb(0, 0, 0) rgb(255, 255, 255);   /* scroll thumb and track */ 
+	overflow-x: hidden;
+	max-width: 100%;
+	
+}
+
+/* Scrollbar styling */
+body::-webkit-scrollbar {
+	width: 8px;               /* width of the entire scrollbar */
+}
+  
+body::-webkit-scrollbar-track {
+	background: rgb(255, 255, 255);        /* color of the tracking area */
+}
+  
+body::-webkit-scrollbar-thumb {
+	background-color: rgb(0, 0, 0);    /* color of the scroll thumb */
+	border-radius: 10px;       /* roundness of the scroll thumb */
+	border: 1px solid rgb(0, 0, 0);  /* creates padding around scroll thumb */
+	
+}
+/* End scrollbar styling*/
+
+  
+
+.section {
+	padding: 100px 0;
+}
+.no-padding {
+	padding: 0;
+}
+ .no-gutter [class*=col-] {
+ padding-right: 0;
+ padding-left: 0;
+}
+
+/* ------------------------------------------------------------------------------
+	Banner
+-------------------------------------------------------------------------------*/
+
+.logo {
+	color: rgba(255, 255, 255, 1);
+	font-family: "Dosis", sans-serif;
+	font-weight: 700;
+	font-size:22px;
+	letter-spacing:3px;
+	text-transform: uppercase;
+	border:1px solid rgba(255, 255, 255, 0.5);
+	padding:10px 20px;
+}
+.banner-area {
+	position: relative;
+}
+
+
+  
+.banner-area-gradient {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0.7;
+	background: rgb(27,19,19);
+}
+.title{
+	font-size: 50px;
+	color: white;
+	font-family: "Dosis", sans-serif;
+	text-transform: uppercase;
+}
+.banner-text {
+	padding-top: 7%;
+	padding-bottom: 19%;
+}
+.banner-text h1 {
+	margin-top:4%;
+	color: #fff;
+	font-family: "Dosis", sans-serif;
+	font-weight: 100;
+	letter-spacing:10px;
+	font-size:19px;
+	text-transform: uppercase;
+}
+.banner-text p {
+	color: rgba(255, 255, 255, 0.5);
+	font-size: 16px;
+	font-weight: 300;
+	line-height: 1.5;
+	letter-spacing:3px;
+	margin-bottom: 5%;
+}
+
+/* ------------------------------------------------------------------------------
+	Countdown
+-------------------------------------------------------------------------------*/
+
+#countdown {
+	padding:0;
+	position:relative;
+	margin-top:5%;
+	margin-bottom:5%;
+}
+.item {
+	display: inline-block;
+	position: relative;
+	text-align:center;
+	margin:0 10px;
+	padding:2%;
+	text-transform:uppercase;
+	font-size:13px;
+	border-top:1px solid rgba(255, 255, 255, 0.1);
+	border-bottom:1px solid rgba(255, 255, 255, 0.1);
+}
+.item p {
+	font-family: "Dosis", sans-serif;
+	text-align:center;
+	margin:0;
+	font-size:27px;
+	padding:0;
+}
+
+/* ------------------------------------------------------------------------------
+	Introduction
+-------------------------------------------------------------------------------*/
+
+
+  .intro-content {
+	margin-top: 20px;
+}
+.intro h1 {
+	font-family: "Dosis", sans-serif;
+	font-size:33px;
+	font-weight: 700;
+}
+.intro h2 {
+	font-family: "Dosis", sans-serif;
+	font-size:17px;
+	font-weight: 700;
+	letter-spacing:2px;
+	text-transform:uppercase;
+}
+.intro p {
+	font-size:15px;
+	font-weight: 300;
+	letter-spacing:1px;
+	line-height:27px;
+}
+
+/* ------------------------------------------------------------------------------
+	Subscribe
+-------------------------------------------------------------------------------*/
+
+	.subscribe {
+	width: 100%;
+	background-color: #eee;
+	background-image: url('../images/backgrounds/parallax-bg.jpg');
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: 50% 0;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	position: relative;
+}
+.subscribe >.container {
+	padding-top: 80px;
+	padding-bottom: 80px;
+}
+.subscribe-title h2 {
+	font-family:"Dosis", sans-serif;
+	font-weight: 600;
+	font-size: 23px;
+	color: #fff;
+	letter-spacing:3px;
+	margin:0 3%;
+	line-height:70px;
+	text-transform:uppercase;
+}
+.subscribe-form {
+	margin-top: 6px;
+}
+.subscribe-form input[type=text] {
+	width: 65%;
+	height: 60px;
+	display: block;
+	padding: 0 20px;
+	background-color: #fff;
+	border: 1px solid #fff;
+	-webkit-border-top-left-radius: 2px;
+	-webkit-border-bottom-left-radius: 2px;
+	-moz-border-radius-topleft: 2px;
+	-moz-border-radius-bottomleft: 2px;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+	line-height: 60px;
+	letter-spacing:1px;
+	font-size:15px;
+	font-weight:300;
+	float: left;
+}
+.subscribe-form input:focus {
+	outline: 0;
+}
+.subscribe-form input[type=submit] {
+	width: 35%;
+	height: 60px;
+	display: block;
+	padding: 0 10px;
+	background-color: #fc6e51;
+	border: 1px solid #fc6e51;
+	color: #fff;
+	-webkit-border-top-right-radius: 2px;
+	-webkit-border-bottom-right-radius: 2px;
+	-moz-border-radius-topright: 2px;
+	-moz-border-radius-bottomright: 2px;
+	border-top-right-radius: 2px;
+	border-bottom-right-radius: 2px;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+	transition: all 0.125s ease-in-out 0s;
+	-moz-transition: all 0.125s ease-in-out 0s;
+	-webkit-transition: all 0.125s ease-in-out 0s;
+	-o-transition: all 0.125s ease-in-out 0s;
+	-ms-transition: all 0.125s ease-in-out 0s;
+	float: right;
+}
+.subscribe-form input[type=submit]:hover {
+	background-color: #e85a3d;
+	border: 1px solid #e85a3d;
+	color: #fff;
+}
+
+.error_message {
+	color:#fc6e51;
+	padding-bottom:15px;
+	font-size:13px;
+	line-height:30px;
+}
+
+#success_page {
+	color:#9ce726;
+	padding-bottom:10px;
+	font-size:12px;
+}
+#success_page h3 {
+	font-size:17px;
+	font-weight:400px;
+	color:#4ab217;
+}
+#success_page p {
+	font-size:12px;
+	font-weight:400px;
+	color:#b3b3b3;
+}
+/* ------------------------------------------------------------------------------
+	 Footer
+-------------------------------------------------------------------------------*/
+.footer {
+	text-align: left;
+	background-color: #181818;
+	padding:30px 0 30px 0;
+}
+
+
+.footer h5 {
+	color: #fff;
+}
+.footer h5 {
+	margin-bottom: 20px;
+}
+.footer p {
+	color: rgba(255, 255, 255, 0.25);
+	font-size:12px;
+	line-height:14px;
+}
+.footer a {
+	color: rgba(255, 255, 255, 0.50);
+}
+.footer a:hover {
+	color: #e84545;
+}
+.footer .footer-share {
+	margin-top: 0;
+}
+.footer .footer-share {
+	display: inline-block;
+	float: none;
+}
+.footer .footer-share {
+	border: none;
+	font-size: 17px;
+	letter-spacing:20px;
+	color: rgba(255, 255, 255, 0.25);
+}
+.footer .fa-heart {
+	color: #e84545;
+	font-size: 11px;
+	margin: 0 2px;
+}
+.social-icons ul li:hover a {
+	color: #F28123;
+  }
+  
+  .social-icons ul li a {
+	-webkit-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+}
+
+ul.social-link-team li a {
+	-webkit-transition: 0.3s;
+	-o-transition: 0.3s;
+	transition: 0.3s;
+  }
+  
+  ul.social-link-team li a:hover {
+	background-color: #4c4c4c;
+	color: #fffefe;
+  }
+
+  ul.social-link-team {
+	position: absolute;
+	bottom: 80px;
+	left: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+  }
+  
+  ul.social-link-team li {
+	display: inline-block;
+  }
+  
+  ul.social-link-team li a {
+	color: #4d4d4d;
+	background-color: #d2d2d2;
+	width: 32px;
+	height: 32px;
+	line-height: 32px;
+	text-align: center;
+	border-radius: 50%;
+	display: block;
+	margin: 5px;
+  }
+  ul li {
+	display: block;
+  }
+
+.mouse-icon {
+	border: 2px solid #fff;
+	border-radius: 16px;
+	height: 40px;
+	width: 24px;
+	display: block;
+	z-index: 10;
+	position:static;
+	left: 0;
+	right: 0;
+	bottom: 100px;
+	margin: auto;
+	margin-top: 140px;
+}
+.mouse-icon .wheel {
+	position: relative;
+	border-radius: 10px;
+	background: #fff;
+	width: 2px;
+	height: 6px;
+	top: 4px;
+	margin-left: auto;
+	margin-right: auto;
+	-webkit-animation-name: drop;
+	-webkit-animation-duration: 1.4s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-play-state: running;
+	animation-name: drop;
+	animation-duration: 1.4s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+}
+@-webkit-keyframes drop {
+	0% {
+	  top: 5px;
+	  opacity: 0;
+	}
+	30% {
+	  top: 10px;
+	  opacity: 1;
+	}
+	100% {
+	  top: 20px;
+	  opacity: 0;
+	}
+  }
+  
+  @keyframes drop {
+	0% {
+	  top: 5px;
+	  opacity: 0;
+	}
+	30% {
+	  top: 10px;
+	  opacity: 1;
+	}
+	100% {
+	  top: 20px;
+	  opacity: 0;
+	}
+  }
+
+  .go-down {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    height: 50px;
+}
+
+
+.button1{
+	appearance: button;
+	background-color: transparent;
+	background-image: linear-gradient(to bottom, rgb(231, 249, 118), #e7aa03);
+	border: 0 solid #e5e7eb;
+	border-radius: .5rem;
+	box-sizing: border-box;
+	color: #482307;
+	column-gap: 1rem;
+	cursor: pointer;
+	display: flex;
+	font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+	font-size: 100%;
+	font-weight: 700;
+	line-height: 24px;
+	margin: 0;
+	outline: 2px solid transparent;
+	padding: 1rem 1.5rem;
+	text-align: center;
+	text-transform: none;
+	transition: all .1s cubic-bezier(.4, 0, .2, 1);
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	box-shadow: -6px 8px 10px rgba(81,41,10,0.1),0px 2px 2px rgba(81,41,10,0.2);
+	display: none;
+  }
+  
+  .button2{
+	appearance: button;
+	background-color: transparent;
+	background-image: linear-gradient(to bottom, rgb(252, 162, 162), #ee3737);
+	border: 0 solid #e5e7eb;
+	border-radius: .5rem;
+	box-sizing: border-box;
+	color: #482307;
+	column-gap: 1rem;
+	cursor: pointer;
+	display: flex;
+	font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+	font-size: 100%;
+	font-weight: 700;
+	line-height: 24px;
+	margin: 0;
+	outline: 2px solid transparent;
+	padding: 1rem 1.5rem;
+	text-align: center;
+	text-transform: none;
+	transition: all .1s cubic-bezier(.4, 0, .2, 1);
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	box-shadow: -6px 8px 10px rgba(81,41,10,0.1),0px 2px 2px rgba(81,41,10,0.2);
+	display: none;
+  }
+
+.framed {
+	box-shadow: -50px -50px 0 -35px var(--one), 50px 50px 0 -40px var(--two);
+  }
+:root {
+	--one: rgb(241, 241, 241);
+	--bgColor: rgb(0, 0, 0);
+	--two: rgb(214, 214, 214);
+	
+  }
+.si{
+	width: 8%;
+	transition: 0.6s;
+}
+.si:hover{
+	animation-name: drop;
+	animation-duration: 1.4s;
+	animation-timing-function:linear;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	animation-play-state:running;
+	width: 9%;
+	transition: 0.6s;
+}
+
+
+#loading{
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	background: white url('images/backgrounds/fish.gif') no-repeat center;
+	z-index: 99999;
+
+}
+
+
