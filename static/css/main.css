@@ -12,7 +12,14 @@
 
 @import url(http://fonts.googleapis.com/css?family=Dosis:300,400,500,600,700);
 @import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700);
-
+html{
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+*
+{
+	font-family: "Dosis", sans-serif;
+}
 p {
 	font-size: 14px;
 	line-height: 22.4px;
@@ -106,8 +113,17 @@ h5 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-family: "Dosis", sans-serif;
+
 	
+  }
+  .inside{
+	font-family: "Dosis", sans-serif;
+	font-weight: bold;
+	font-size: 150%;
+  }
+
+  .c-form__toggle:hover {
+	box-shadow: 0 0 12px #c7c7c7, 0 0 22px white;
   }
   
   .c-form__input,
@@ -176,78 +192,11 @@ h5 {
   }
   
 
-  @media screen and (max-width: 600px) {
-	.c-checkbox:checked + .c-formContainer .c-form {
-		width: 25em;
-	  }
-	  .c-form__button {
-		color: inherit;
-		padding: 0;
-		height: 100%;
-		width: 4em;
-		background-color: #ececec;
-		transition: 0.6s;
-	  }
-	  .c-formContainer,
-  	  .c-form,
-      .c-form__toggle {
-		width: 14em;
-		height: 3.25em;
-  	}
-	  .c-form__input,
-	  .c-form__buttonLabel {
-		font-size: 1em;
-		opacity: 0;
-		visibility: hidden;
-		transform: scale(0.7);
-		transition: 0s;
-		font-family: "Dosis", sans-serif;
-	}
-	.c-formContainer {
-		position: relative;
-		font-weight: 700;
-		margin-top: 18px;
-	  }
-	.c-form__toggle {
-		color: #000000;
-		font-size: 1em;
-		top: 0;
-		cursor: pointer;
-		z-index: 1;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		font-family: "Dosis", sans-serif;
-		
-	}
-	.mouse-icon {
-		border: 2px solid #fff;
-		border-radius: 16px;
-		height: 40px;
-		width: 24px;
-		display: block;
-		z-index: 10;
-		position:static;
-		left: 0;
-		right: 0;
-		bottom: 100px;
-		margin: auto;
-	}
-
-	
-	.cent{
-		margin-left: 100px;
-	}
-
-	.p1{
-		margin-top: 100px;
-	}
-	.p2{
-		margin-top: 0;
-	}
-  }
+ 
  
 
+
+ 
 /* ------------------------------------------------------------------------------
 	Global Styles
 -------------------------------------------------------------------------------*/
@@ -318,7 +267,8 @@ body::-webkit-scrollbar-thumb {
 	padding:10px 20px;
 }
 .banner-area {
-	position: relative;
+	position:relative;
+	overflow: hidden;
 }
 
 
@@ -331,6 +281,7 @@ body::-webkit-scrollbar-thumb {
 	height: 100%;
 	opacity: 0.7;
 	background: rgb(27,19,19);
+	overflow: hidden;
 }
 .title{
 	font-size: 50px;
@@ -341,6 +292,9 @@ body::-webkit-scrollbar-thumb {
 .banner-text {
 	padding-top: 7%;
 	padding-bottom: 19%;
+}
+.move-title{
+	top: 0px;
 }
 .banner-text h1 {
 	margin-top:4%;
@@ -394,9 +348,7 @@ body::-webkit-scrollbar-thumb {
 -------------------------------------------------------------------------------*/
 
 
-  .intro-content {
-	margin-top: 20px;
-}
+ 
 .intro h1 {
 	font-family: "Dosis", sans-serif;
 	font-size:33px;
@@ -529,7 +481,8 @@ body::-webkit-scrollbar-thumb {
 .footer {
 	text-align: left;
 	background-color: #181818;
-	padding:30px 0 30px 0;
+	padding:40px 0 40px 0;
+	
 }
 
 
@@ -620,10 +573,10 @@ ul.social-link-team li a {
   }
 
 .mouse-icon {
-	border: 2px solid #fff;
+	border: 4px solid #fff;
 	border-radius: 16px;
-	height: 40px;
-	width: 24px;
+	height: 80px;
+	width: 50px;
 	display: block;
 	z-index: 10;
 	position:static;
@@ -637,8 +590,8 @@ ul.social-link-team li a {
 	position: relative;
 	border-radius: 10px;
 	background: #fff;
-	width: 2px;
-	height: 6px;
+	width: 4px;
+	height: 10px;
 	top: 4px;
 	margin-left: auto;
 	margin-right: auto;
@@ -654,6 +607,10 @@ ul.social-link-team li a {
 	animation-delay: 0s;
 	animation-iteration-count: infinite;
 	animation-play-state: running;
+}
+
+.mouse-icon:hover .wheel{
+	animation-duration: 0.5s;
 }
 @-webkit-keyframes drop {
 	0% {
@@ -692,64 +649,11 @@ ul.social-link-team li a {
     margin: auto;
     width: 100%;
     height: 50px;
+	
 }
 
 
-.button1{
-	appearance: button;
-	background-color: transparent;
-	background-image: linear-gradient(to bottom, rgb(231, 249, 118), #e7aa03);
-	border: 0 solid #e5e7eb;
-	border-radius: .5rem;
-	box-sizing: border-box;
-	color: #482307;
-	column-gap: 1rem;
-	cursor: pointer;
-	display: flex;
-	font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-	font-size: 100%;
-	font-weight: 700;
-	line-height: 24px;
-	margin: 0;
-	outline: 2px solid transparent;
-	padding: 1rem 1.5rem;
-	text-align: center;
-	text-transform: none;
-	transition: all .1s cubic-bezier(.4, 0, .2, 1);
-	user-select: none;
-	-webkit-user-select: none;
-	touch-action: manipulation;
-	box-shadow: -6px 8px 10px rgba(81,41,10,0.1),0px 2px 2px rgba(81,41,10,0.2);
-	display: none;
-  }
-  
-  .button2{
-	appearance: button;
-	background-color: transparent;
-	background-image: linear-gradient(to bottom, rgb(252, 162, 162), #ee3737);
-	border: 0 solid #e5e7eb;
-	border-radius: .5rem;
-	box-sizing: border-box;
-	color: #482307;
-	column-gap: 1rem;
-	cursor: pointer;
-	display: flex;
-	font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
-	font-size: 100%;
-	font-weight: 700;
-	line-height: 24px;
-	margin: 0;
-	outline: 2px solid transparent;
-	padding: 1rem 1.5rem;
-	text-align: center;
-	text-transform: none;
-	transition: all .1s cubic-bezier(.4, 0, .2, 1);
-	user-select: none;
-	-webkit-user-select: none;
-	touch-action: manipulation;
-	box-shadow: -6px 8px 10px rgba(81,41,10,0.1),0px 2px 2px rgba(81,41,10,0.2);
-	display: none;
-  }
+
 
 .framed {
 	box-shadow: -50px -50px 0 -35px var(--one), 50px 50px 0 -40px var(--two);
@@ -776,13 +680,391 @@ ul.social-link-team li a {
 }
 
 
-#loading{
-	position: fixed;
+.loader {
+	display:flex;
 	width: 100%;
-	height: 100vh;
-	background: white url('images/backgrounds/fish.gif') no-repeat center;
-	z-index: 99999;
-
+	height: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	justify-content: center;
+	align-items: center;
+	background: white no-repeat center;
+	background-size: 180px 150px;
+	transition: opacity 0.75s,visibility 0.75s;
+  }
+  .loader-hidden {
+	opacity: 0;
+	visibility: hidden;
+  }
+  
+.l{
+	user-select: none;
+	user-drag: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none; 
+	width: 230px;
+	filter: grayscale(100%);
+	-webkit-filter: grayscale(100%); /* safari 6.0 - 9.0 */
 }
 
 
+.card
+{
+width: 300px;
+height: 450px;
+background: transparent;
+border-radius: 10px;
+margin-top: 40px;
+margin-left: 70px;
+position: relative;
+float: left;
+}
+.card:hover
+{
+box-shadow: 0px 0px 20px 1px #9592927a;
+}
+.bg
+{
+width: 80%;
+transform: rotate(90deg);
+margin-left: 22px;
+margin-top: 10px;
+opacity: 0.1;
+transition: 1s;
+}
+.one
+{
+width: 80%;
+position: absolute;
+top: 15px;
+left: 25px;
+}
+.card:hover .bg
+{
+transform: rotate(120deg);
+opacity: 1;
+transition: 1s;
+}
+.card h3
+{
+text-align: center;
+color: #222;
+cursor: pointer;
+font-size: 160%;
+}
+.card h4
+{
+text-align: center;
+color: grey;
+font-weight: 500;
+font-size: 140%;
+}
+.icon
+{
+text-align: center;
+margin-top: 40px;
+}
+.icon ion-icon
+{
+font-size: 20px;
+border-radius: 50%;
+padding: 8px;
+cursor: pointer;
+background: grey;
+color: #fff;
+border: 1px solid white;
+opacity: 0;
+transition: 0.5s;
+}
+.icon ion-icon:hover
+{
+color: grey;
+border: 1px solid grey;
+background: transparent;
+transition: 0.5s;
+}
+.card:hover .icon ion-icon
+{
+opacity: 1;
+}
+
+.moveLeft{
+	right: -20px;
+}
+
+#myvideo{
+	position:absolute; 
+	object-fit: cover;
+}
+
+
+
+.shape{
+	position: absolute;
+	width: 158%;
+	height: 10%;
+	left: -266px;
+	bottom: -20px;
+}
+
+
+
+#myBtn{
+ background: url('C:/Users/google store/Desktop/Detecting-Phishing-URL/static/images/backgrounds/scrollBtn.png') no-repeat center;
+ width: 60px;
+ height: 60px;
+ border: none;
+background-size: cover;
+position: fixed;
+z-index: 99;
+cursor: pointer;
+display: none;
+bottom: 20px;
+right: 30px;
+}
+
+.textAnimation{     
+    -webkit-animation-name: textAnime;
+	-webkit-animation-duration: 9s;
+	-webkit-animation-timing-function: linear;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-play-state: running;
+	animation-name: textAnime;
+	animation-duration: 9s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-iteration-count: infinite;
+	animation-play-state: running;
+}
+
+.inner1{
+	-webkit-animation-name: animateInner1;
+	-webkit-animation-duration: 3s;
+	-webkit-animation-timing-function:linear;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-play-state:running;
+	animation-name: animateInner1;
+	animation-duration: 3s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-play-state: running;
+	box-shadow: 5px 30px 160px 5px red inset;
+}
+.inner2{
+
+	-webkit-animation-name: animateInner2;
+	-webkit-animation-duration: 3s;
+	-webkit-animation-timing-function:linear;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-animation-play-state:running;
+	animation-name: animateInner2;
+	animation-duration: 3s;
+	animation-timing-function: linear;
+	animation-delay: 0s;
+	animation-iteration-count: 1;
+	animation-play-state: running;
+	box-shadow: 5px 20px 160px 5px green inset;
+}
+
+@keyframes animateInner1 {
+    0% {
+		box-shadow: none;
+    }
+    25% {
+		box-shadow: 1px 1px 10px 5px red inset;
+    }
+
+	50%{
+
+		box-shadow: 1px 1px 60px 5px red inset;
+    }
+
+	75%{
+
+		box-shadow: 5px 10px 80px 5px red inset;
+    }
+	100% {
+		box-shadow: 5px 30px 160px 5px red inset;
+    }
+	
+	
+}
+
+@keyframes animateInner2 {
+	0% {
+		box-shadow: none;
+    }
+    25% {
+		box-shadow: 1px 1px 10px 5px green inset;
+    }
+
+	50%{
+
+		box-shadow: 1px 1px 60px 5px green inset;
+    }
+
+	75%{
+
+		box-shadow: 5px 10px 80px 5px green inset;
+    }
+	100% {
+		box-shadow: 5px 30px 160px 5px green inset;
+    }
+	
+}
+
+
+.ti1{
+	font-family: "Dosis", sans-serif;
+	font-weight: bold;
+	color: rgb(77, 234, 77);
+	font-size: 140%;
+}
+
+.ti2{
+	font-family: "Dosis", sans-serif;
+	font-weight: bold;
+	color: rgb(255, 0, 0);
+	font-size: 140%;
+}
+
+#linktext{
+	font-family: "Dosis", sans-serif;
+	font-weight: bold;
+	color: yellow;
+	font-size: 120%;
+	text-decoration: underline;
+	
+}
+
+@media screen and (max-device-width: 480px) {
+	/* styles for mobile browsers smaller than 480px; (iPhone) */
+   .c-checkbox:checked + .c-formContainer .c-form {
+	   width: 25em;
+	   
+	 }
+	 .c-form__button {
+	   color: inherit;
+	   padding: 0;
+	   height: 100%;
+	   width: 4em;
+	   background-color: #ececec;
+	   transition: 0.6s;
+	   
+	 }
+	 .c-formContainer,
+	   .c-form,
+	 .c-form__toggle {
+	   width: 14em;
+	   height: 4.25em;
+	 }
+	 .c-form__input,
+	 .c-form__buttonLabel {
+	   font-size: 1em;
+	   opacity: 0;
+	   visibility: hidden;
+	   transform: scale(0.7);
+	   transition: 0s;
+	   font-family: "Dosis", sans-serif;
+   }
+   .c-formContainer {
+	   position: relative;
+	   font-weight: 700;
+	   margin-top: 18px;
+	 }
+   .c-form__toggle {
+	   color: #000000;
+	   font-size: 1em;
+	   top: 0;
+	   cursor: pointer;
+	   z-index: 1;
+	   display: flex;
+	   align-items: center;
+	   justify-content: center;
+	   font-family: "Dosis", sans-serif;
+	   
+   }
+   .mouse-icon {
+	   border: 2px solid #fff;
+	   border-radius: 16px;
+	   height: 60px;
+	   width: 40px;
+	   display: block;
+	   z-index: 10;
+	   position:absolute;
+	   left: 0;
+	   right: 0;
+	   bottom: 110px;
+	   margin: auto;
+   }
+
+   
+   .cent{
+	   margin-left: 115px;
+   }
+
+
+
+   .l{
+	   width: 100px;
+	   filter: grayscale(100%);
+	   -webkit-filter: grayscale(100%); /* safari 6.0 - 9.0 */
+   }
+
+   .ty{
+	   font-size: 19px;
+   }
+
+   #myvideo{
+	position:absolute; 
+	object-fit: cover;
+	height: 720px;
+	
+}
+
+.shape{
+	position: absolute;
+	width: 110%;
+	height: 10%;
+	left: -20px;
+	bottom: -40px;
+}
+
+.si{
+	width: 20%;
+	transition: 0.6s;
+}
+
+.go-down {
+    position: absolute;
+    right: 0;
+    left: 0;
+	bottom: 50px;
+    margin: auto;
+    width: 100%;
+    height: 70px;
+	
+}
+
+
+.move-title{
+	top: -90px;
+	position: relative;
+}
+
+.moveLeft{
+	right: 10px;
+}
+
+ }
+
+@media only screen and (device-width: 768px) {
+   /* default iPad screens */
+}
