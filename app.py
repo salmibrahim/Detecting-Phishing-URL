@@ -14,9 +14,9 @@ gbc = pickle.load(file)
 file.close()
 
 
-application = Flask(__name__)
+app = Flask(__name__)
 
-@application.route("/", methods=["GET", "POST"])
+@app.route("/", methods=["GET", "POST"])
 def index():
     if request.method == "POST":
 
@@ -35,4 +35,4 @@ def index():
 
 
 if __name__ == "__main__":
-    application.run(host='0.0.0.0', port=81)
+    app.run(host='0.0.0.0', port=5000)
