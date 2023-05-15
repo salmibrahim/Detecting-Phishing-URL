@@ -10,7 +10,7 @@
 <meta charset="utf-8">
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Detecting-Phishing-URL</title>
+<title>Phishing URL Detection</title>
 <link rel="stylesheet" href="static/css/bootstrap.min.css">
 <link rel="stylesheet" href="static/css/main.css">
 <link rel="stylesheet" href="static/css/responsive.css">
@@ -37,14 +37,14 @@
         <div class="col-md-10 col-md-offset-1">
           <div class="banner-text">
           <div class="move-title">
-          <div class="title textAnimation" data-aos="fade-up" data-aos-delay="200">Detecting Phishing URL</div>
+          <div class="title textAnimation" data-aos="fade-up" data-aos-delay="200">PHISHING URL DETECTION</div>
             <h1 style="margin-top: 100px; " data-aos="fade-up" data-aos-delay="300"><span class="typer ty" id="some-id" data-delay="200" data-delim=":" data-words="LET'S CHECK:BE SAFE" data-colors="white"></span><span class="cursor" data-cursorDisplay="_" data-owner="some-id"></span></h1>
           
            <input class="c-checkbox " type="checkbox" id="checkbox">
            <div class="c-formContainer" data-aos="fade-up" data-aos-delay="400">
               <form class="c-form" id="f" action="/" method ="post" >
                     <input class="c-form__input" placeholder="Enter URL" name="url"  id="url" type="text" required>
-                    <button class="c-form__button" onclick="phishing()" role="button">Check</button>
+                    <button class="c-form__button" onclick="detect()" role="button">Check</button>
                     <label class="c-form__toggle" for="checkbox"><div id="labelData" class="inside">Check Here</div></label>
               </form>
            
@@ -60,7 +60,7 @@
             <div data-aos="fade-up" data-aos-delay="600">
             <div class="mouse-icon"><div class="wheel"></div></div><br>
             <div class="go-down">
-		  	      <a href="#about" ><img class="si" src="static/images/backgrounds/down.png" alt="MORE"></a>
+		  	      <a href="#about" ><img class="si" src="static/images/backgrounds/down.png" alt="More"></a>
 		  	    </div>
             </div>
             </center>
@@ -78,7 +78,7 @@
 <section id="intro" class="section intro">
   <div class="container">
     
-    <button onclick="topFunction()" class="scrollBtn" id="myBtn" title="Go to top"></button>
+    <button onclick="topFunction();" class="scrollBtn" title="Go to top"><img src="static/images/backgrounds/scrollBtn.png" id="myBtn" class="scrollBtn" alt="Up"></img></button>
     <center>
     <div id="about">
     <h1 style="font-size:400%; margin-top:-100px;" data-aos="fade-up" data-aos-delay="300" >About Project</h1> 
@@ -93,12 +93,12 @@
           <div class="card">
             <img class="bg" src="static/images/backgrounds/bg.png">
             <img class="one" src="static/images/backgrounds/salm.png">
-            <h3><b>Salm Ibrahim Ilyas</b></h3>
+            <h3><b>Salm Ibrahim Elias</b></h3>
             <h4>Programmer</h4>
             <div class="icon">
             <a href="" target="_blank"><ion-icon name="logo-skype"></ion-icon></a>
             <a href="" target="_blank"><ion-icon name="logo-whatsapp"></ion-icon></a>
-            <a href="https://www.facebook.com/Salm.IBRaHiM.01/" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
+            <a href="" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
             <a href="" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
             </div>
             </div>
@@ -122,11 +122,11 @@
       <div class="col-sm-4 moveLeft" data-aos="fade-up" data-aos-delay="900">
       <div class="card">
         <img class="bg" src="static/images/backgrounds/bg.png">
-          <img class="one" src="static/images/backgrounds/mahmood.png">
-          <h3><b>Mahmood Emad Muhammad</b></h3>
-          <h4>Web Develope</h4>
+        <img class="one" src="static/images/backgrounds/mahmood.png">
+        <h3><b>Mahmood Emad Muhammad</b></h3>
+        <h4>Web Developer</h4>
         <div class="icon">
-        <a href="" target="_blank"><ion-icon name="logo-skype"></ion-icon></a>
+        <a href="" target="_blank" ><ion-icon name="logo-skype"></ion-icon></a>
         <a href="" target="_blank"><ion-icon name="logo-whatsapp"></ion-icon></a>
         <a href="" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a>
         <a href="" target="_blank"><ion-icon name="logo-twitter"></ion-icon></a>
@@ -171,12 +171,19 @@
 
     
         <script>
-          let x= '{{xx}}';
-          var label=document.getElementById("labelData");
-          var sta=document.getElementById("status");
-          let lin=document.getElementById("linktext");
-          var ti=document.getElementById("t");
-         
+
+            let x= '{{xx}}';
+            var label=document.getElementById("labelData");
+            var sta=document.getElementById("status");
+            let lin=document.getElementById("linktext");
+            var ti=document.getElementById("t");
+            
+          if (lin.childNodes.length === 0)
+          {
+
+          }
+          else
+          {
             if(x<=1 && x>=0.50){
               
               label.innerHTML = "Safe";
@@ -184,6 +191,7 @@
               sta.classList.add("inner2");
               ti.classList.add("ti1");
               ti.innerHTML="Continue? ";
+              lin.style.color="lightgreen";
             }
             else if (0<=x && x<0.50){
 
@@ -191,8 +199,14 @@
               label.style.color="red";
               sta.classList.add("inner1");
               ti.classList.add("ti2");
-              ti.innerHTML="Are sure to continue? ";
+              ti.innerHTML="Are you sure to continue? ";
+              lin.style.color="red";
             }
+          }
+          
+
+          
+            
           
 
        </script>
